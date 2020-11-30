@@ -8,32 +8,32 @@
 
 Update the system
 
-```bash
+```sh
 sudo apt update
 sudo apt upgrade #when asked press "y"
 ```
 
 Install openssh-server
 
-```bash
+```sh
 sudo apt install openssh-server #When asked press "y"
 ```
 
 Verify that ssh service running
 
-```bash
+```sh
 sudo systemctl status ssh
 ```
 
 If not running
 
-```bash
+```sh
 sudo systemctl enable --now ssh
 ```
 
 Configure firewall and open port 22
 
-```bash
+```sh
 sudo ufw allow ssh
 sudo ufw enable
 sudo ufw status
@@ -41,19 +41,19 @@ sudo ufw status
 
 To get IP
 
-```bash
+```sh
 ip a
 ```
 
 Test login with SSH
 
-```bash
+```sh
 ssh user@"server-ip"
 ```
 
 Create shortcut for ssh login on local machine
 
-```bash
+```sh
 cd ~/.ssh
 nano config
 
@@ -67,25 +67,25 @@ Host "hostname"
 
 Test if shortcut works
 
-```bash
+```sh
 ssh "hostname"
 ```
 
 Set up login with key
 
-```bash
+```sh
 ssh-copy-id "hostname" #do this on local pc
 ```
 
 Test if ssh-copy-id worked
 
-```bash
+```sh
 ssh "hostname"
 ```
 
 disable login with password
 
-```bash
+```sh
 sudo nano /etc/ssh/sshd_config
 
 #change from
@@ -99,13 +99,13 @@ sudo nano /etc/ssh/sshd_config
 
 restart ssh
 
-```bash
+```sh
 systemctl restart ssh
 ```
 
 test if password works
 
-```bash
+```sh
 ssh -o PreferredAuthentications=password "hostname"
 ```
 
