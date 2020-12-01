@@ -1,5 +1,7 @@
 # Pterodactyl Panel Install
 
+[Back to README](README.md)
+
 ## Note
 
 This is only done on one machine.

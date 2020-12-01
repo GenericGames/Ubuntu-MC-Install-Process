@@ -1,5 +1,7 @@
 # Setting up MySQL
 
+[Back to README](README.md)
+
 ## Creating a database for Pterodactyl
 
 Log In
