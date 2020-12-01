@@ -1,7 +1,9 @@
 # Pterodactyl Panel install
 
+## Note
+
 This is only done on one machine.
-If the panel is already installed move onto Pterodactyl Wings install.
+If the panel is already installed move onto [Pterodactyl Wings install](3%20-%20Pterodactyl%20Wings%20install.md).
 [Link to documentation](https://pterodactyl.io/project/introduction.html)
 
 ### Dependencies
