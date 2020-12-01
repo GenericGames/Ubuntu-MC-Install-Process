@@ -133,3 +133,158 @@ php artisan key:generate --force
 ```
 
 ### Environment Configuration
+
+#### Setup
+
+```sh
+php artisan p:environment:setup
+#Note Everything in Brackets [] is default setting, press enter if you want default
+```
+
+```sh
+Egg Author Email [unknown@unknown.com]
+#type in your email
+```
+
+```sh
+Application url [http://localhost]
+#For now use default (hit enter) when setting up on dedicated server https://url.com
+```
+
+```sh
+Application timezone [America/New_York]:
+#Americia/Phoenix
+```
+
+```sh
+Cache Driver [Filesystem]:
+Redis
+```
+
+```sh
+Queue Driver [MySQL Database]:
+Default (Hit enter)
+```
+
+```sh
+Enable UI based settings editor (yes/no) [yes]:
+#Default (hit enter)
+```
+
+```sh
+Redis Host [localhost]:
+Default (hit enter)
+```
+
+```sh
+Redis Password:
+#default (hit enter)
+```
+
+```sh
+Redis Port [6379]:
+#Default (hit enter)
+```
+
+#### Database
+
+```sh
+php artisan p:environment:database
+#Note Everything in Brackets [] is default setting, press enter if you want default
+```
+
+```sh
+Database Host [127.0.0.1]:
+#Default (hit enter)
+```
+
+```sh
+Database Port [3306]:
+Default (hit enter)
+```
+
+```sh
+Database Name [panel]:
+#default (hit enter) unless panel name was changed earlier in the configuration
+```
+
+```sh
+Database Username [pterodactyl]:
+#Default (hit enter) unless database username was changed earlier in the configuration
+```
+
+```sh
+Database Password:
+#Default is set to "somePassword" for testing purposes but should have been changed for actual install
+```
+
+#### Mail
+
+```sh
+php artisan p:environment:mail
+#Note Everything in Brackets [] is default setting, press enter if you want default
+```
+
+```sh
+Which driver should be used for sending emails [SMTP Server]:
+Mail
+```
+
+```sh
+Email address emails should originate from [no-reply@example.com]
+#for now use default (hit enter)
+```
+
+```sh
+Name that emails should appear from [Pterodactyl Panel]:
+#Default (hit enter)
+```
+
+```sh
+Encryption method to use [TLS]:
+None
+```
+
+### Database User Setup
+
+Add the first user
+
+```sh
+php artisan p:user:make
+```
+
+```sh
+Is this user an administrator (yes/no) [no]:
+yes
+```
+
+```sh
+Email Address:
+#Put in email address
+```
+
+```sh
+Username:
+#Put in username
+```
+
+```sh
+First Name:
+#Put in first name
+```
+
+```sh
+Last Name:
+#put in last name
+```
+
+```sh
+Password:
+#Enter password - Note: Must be at a minimum 8 characters, contain one capital, and one number
+```
+
+### Set Permissions
+
+```sh
+chown -R www-data:www-data *
+```

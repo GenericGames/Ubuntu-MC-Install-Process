@@ -111,6 +111,7 @@ ssh -o PreferredAuthentications=password "hostname"
 
 If the Pterodactyl Panel has not already been installed on a machine than continue to the panel install
 [Pterodactyl Panel install](2%20-%20Pterodactyl%20Panel%20install.md)
+
 If it has already been installed than skip and go to the wings install
 [Pterodactyl Wings install](3%20-%20Pterodactyl%20Wings%20install.md)
 
