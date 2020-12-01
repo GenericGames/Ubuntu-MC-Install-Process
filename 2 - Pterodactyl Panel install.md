@@ -1,9 +1,10 @@
-# Pterodactyl Panel install
+# Pterodactyl Panel Install
 
 ## Note
 
 This is only done on one machine.
 If the panel is already installed move onto [Pterodactyl Wings install](3%20-%20Pterodactyl%20Wings%20install.md).
+
 [Link to documentation](https://pterodactyl.io/project/introduction.html)
 
 ### Dependencies
@@ -68,46 +69,11 @@ tar -xzvf panel.tar.gz
 chmod -R 755 storage/* bootstrap/cache/
 ```
 
-### Setting up MySQL
+### Setup MySQL
 
-Log In
+Before continuing to the next step MySQL needs to be partially set up.
 
-```sh
-mysql -u root -p
-```
-
-Set to use mysql
-
-```sql
-USE mysql;
-#Note - If you have to exit at any point after this make sure to use this command again
-```
-
-Create user
-
-```sql
-# Remember to change 'somePassword' below to be a unique password specific to this account.
-CREATE USER pterodactyl@127.0.0.1 IDENTIFIED BY 'somePassword';
-```
-
-Create database
-
-```sql
-CREATE DATABASE panel;
-```
-
-Assign permissions
-
-```sql
-GRANT ALL PRIVILEGES ON panel.* TO 'pterodactyl'@'127.0.0.1' WITH GRANT OPTION;
-FLUSH PRIVILEGES;
-```
-
-Leave MariaDB/MySQL
-
-```sh
-exit
-```
+[MySQL setup](Setting%20up%20MySQL.md#creating-a-database-for-pterodactyl)
 
 ### Installation
 
@@ -287,4 +253,16 @@ Password:
 
 ```sh
 chown -R www-data:www-data *
+```
+
+### Queue Listeners
+
+Crontab Configuration
+
+```sh
+sudo crontab -e
+```
+
+```sh
+* * * * * php /var/www/pterodactyl/artisan schedule:run >> /dev/null 2>&1
 ```

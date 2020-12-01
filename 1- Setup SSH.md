@@ -1,5 +1,7 @@
 # SSH setup
 
+[Back to README](README.md)
+
 ## Lock root
 
 `sudo passwd --lock root`
