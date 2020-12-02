@@ -111,17 +111,17 @@ php artisan p:environment:setup
 
 ```sh
 Egg Author Email [unknown@unknown.com]
-#type in your email
+#For now use default (hit enter) when setting up on dedicated server type in your email
 ```
 
 ```sh
 Application url [http://localhost]
-#For now use default (hit enter) when setting up on dedicated server https://url.com
+#For now use default (hit enter) when setting up on dedicated server use https://simplegaming.gg/
 ```
 
 ```sh
 Application timezone [America/New_York]:
-#Americia/Phoenix
+#America/Phoenix
 ```
 
 ```sh
@@ -213,6 +213,12 @@ Encryption method to use [TLS]:
 None
 ```
 
+### Database Setup
+
+```sh
+php artisan migrate --seed --force
+```
+
 ### Database User Setup
 
 Add the first user
@@ -248,7 +254,7 @@ Last Name:
 
 ```sh
 Password:
-#Enter password - Note: Must be at a minimum 8 characters, contain one capital, and one number
+#For testing we will use "Password1" when dedicated is set up we will use actual password. Enter password - Note: Must be at a minimum 8 characters, contain one capital, and one number
 ```
 
 ### Set Permissions
@@ -267,4 +273,45 @@ sudo crontab -e
 
 ```sh
 * * * * * php /var/www/pterodactyl/artisan schedule:run >> /dev/null 2>&1
+#Paste the above line at the bottom
+```
+
+### Create Queue Worker
+
+```sh
+cd /etc/systemd/system
+```
+
+```sh
+nano pteroq.service
+```
+
+Add below contents to the file
+
+```sh
+# Pterodactyl Queue Worker File
+# ----------------------------------
+
+[Unit]
+Description=Pterodactyl Queue Worker
+After=redis-server.service
+
+[Service]
+# On some systems the user and group might be different.
+# Some systems use `apache` or `nginx` as the user and group.
+User=www-data
+Group=www-data
+Restart=always
+ExecStart=/usr/bin/php /var/www/pterodactyl/artisan queue:work --queue=high,standard,low --sleep=3 --tries=3
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```sh
+sudo systemctl enable --now redis-server
+```
+
+```sh
+sudo systemctl enable --now pteroq.service
 ```
