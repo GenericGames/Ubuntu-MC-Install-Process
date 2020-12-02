@@ -1,5 +1,7 @@
 # Webserver Configuration
 
+[Back to README](README.md)
+
 ## NGINX Configuration
 
 ```sh
@@ -143,3 +145,5 @@ Restart NGINX
 ```sh
 systemctl restart nginx
 ```
+
+That's it for the Webserver Configuration, time to move onto the [Pterodactyl Wings install](4%20-%20Pterodactyl%20Wings%20install.md)

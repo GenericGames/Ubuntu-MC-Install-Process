@@ -5,4 +5,5 @@ Walk through for setting up ssh, Pterodactyl panel, Pterodactyl Webserver config
 * [Setup SSH](1-%20Setup%20SSH.md)
 * [Pterodactyl Panel install](2%20-%20Pterodactyl%20Panel%20install.md)
   * [Creating a database for Pterodactyl](Setting%20up%20MySQL.md#creating-a-database-for-pterodactyl)
+* [Webserver Configuration](3%20-%20Webserver%20Configuration.md)
 * [Pterodactyl Wings install](3%20-%20Pterodactyl%20Wings%20install.md)

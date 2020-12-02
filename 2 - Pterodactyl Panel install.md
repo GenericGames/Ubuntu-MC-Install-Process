@@ -315,3 +315,5 @@ sudo systemctl enable --now redis-server
 ```sh
 sudo systemctl enable --now pteroq.service
 ```
+
+You are now done with the Pterodactyl Panel Install and can moveon to the [Webserver Configuration](3%20-%20Webserver%20Configuration.md)
