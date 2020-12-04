@@ -96,7 +96,7 @@ sudo nano /etc/ssh/sshd_config
 
 # to - Make sure to remove the # at the start
 
-"PasswordAuthentication yes"
+"PasswordAuthentication no"
 ```
 
 restart ssh

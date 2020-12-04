@@ -127,3 +127,9 @@ reload systemd and start wings
 ```sh
 systemctl enable --now wings
 ```
+
+```sh
+ufw allow 8080 && ufw allow 2022 && ufw allow 80
+```
+
+You are now finished!
