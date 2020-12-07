@@ -49,7 +49,19 @@ After setting up the database for Pterodactyl you can go back to the installatio
 
 ## Creating a Database Host for Nodes
 
-#Creating a user
+### Dependencies
+
+The dependencies only need to be installed if this system is not running the panel, otherwise they are already installed
+
+```sh
+sudo apt update
+```
+
+```sh
+sudo apt install mariadb-server -y
+```
+
+### Creating a user
 
 ```sh
 mysql -u root -p
@@ -59,7 +71,7 @@ mysql -u root -p
 USE mysql;
 ```
 
-Change IP below to server's IP & change username/password to unique user/pass
+Change IP below to server's IP that is running the panel & change username/password to unique user/pass
 
 ```sql
 CREATE USER 'pterodactyluser'@'127.0.0.1' IDENTIFIED BY 'somepassword';
